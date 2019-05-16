@@ -47,7 +47,7 @@ with open('5.digimondict.csv', 'w', encoding="utf-8", newline='') as writeFile:
         writer.writeheader()
         writer.writerows(allData)
 
-'''
+
 # IMPORT TO MSQL =======================================================
 mydb = mysql.connector.connect(
     host = 'localhost',
@@ -55,9 +55,10 @@ mydb = mysql.connector.connect(
     passwd = '12345',
     database = 'digimon'
 )
+hapus = mydb.cursor().execute('delete from digimon')
+mulai = mydb.cursor().execute('ALTER TABLE digimon AUTO_INCREMENT = 1')
 
 for z in range(len(names)):
     y = mydb.cursor()
     y.execute('insert into digimon (nama, gambar) values (%s, %s)', (names[z], images[z]))          #di database usia otomatis berubah jadi int sesuai format database
 mydb.commit() 
-'''
