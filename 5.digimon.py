@@ -51,8 +51,8 @@ with open('5.digimondict.csv', 'w', encoding="utf-8", newline='') as writeFile:
 # IMPORT TO MSQL =======================================================
 mydb = mysql.connector.connect(
     host = 'localhost',
-    user = 'NadyaSaffira',
-    passwd = '12345',
+    user = 'username',
+    passwd = 'password',
     database = 'digimon'
 )
 hapus = mydb.cursor().execute('delete from digimon')
